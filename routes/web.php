@@ -21,3 +21,6 @@ Route::post('/create-post', function () {
     return "тут будут мои функции123";
 });
 
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
