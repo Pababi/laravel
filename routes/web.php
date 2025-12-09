@@ -27,9 +27,9 @@ Route::get('/greeting', function () {
     return 'Hello World';
 });
 
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Controller;
 
-Route::get('/user', [UserController::class, 'index']);
+Route::get('/user', [Controller::class, 'index']);
 
 Route::match(['get', 'post'], '/', function () {
     // ...
@@ -47,5 +47,11 @@ Route::match(['get', 'post'], '/', function () {
 });
 
 Route::any('/', function () {
+    // ...
+});
+
+use Illuminate\Http\Request;
+
+Route::get('/users', function (Request $request) {
     // ...
 });
