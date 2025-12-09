@@ -122,3 +122,17 @@ Route::get('/category/{category}', function (string $category) {
 Route::get('/category/{category}', function (string $category) {
     return $category;
 })->whereIn('category', CategoryEnum::cases());
+
+/**
+ * Запуск любых служб приложения.
+ */
+//public function boot(): void
+//{
+//    Route::pattern('id', '[0-9]+');
+//}
+
+Route::get('/user/{id}', function (string $id) {
+    // Выполнится, только если параметр `{id}` имеет числовое значение...
+});
+
+
