@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 
-
 Route::get('/', function () {
 //    return Inertia::render('welcome');
     $html = '<form method="post" action="create-post">
@@ -57,6 +56,10 @@ Route::get('/users', function (Request $request) {
 });
 
 return '<form method="POST" action="/profile">
-@csrf
+ @csrf
 ...
 </form>';
+
+Route::redirect('/here', '/there'); // Метод
+Route::redirect('/here', '/there', 301); // Необязательный 3-ий параметр
+Route::permanentRedirect('/here', '/there'); // Возвращает код в 301
