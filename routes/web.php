@@ -63,3 +63,7 @@ return '<form method="POST" action="/profile">
 Route::redirect('/here', '/there'); // Метод
 Route::redirect('/here', '/there', 301); // Необязательный 3-ий параметр
 Route::permanentRedirect('/here', '/there'); // Возвращает код в 301
+
+Route::view('/welcome', 'welcome');
+
+Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
