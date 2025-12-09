@@ -35,4 +35,17 @@ Route::match(['get', 'post'], '/', function () {
     // ...
 });
 
+//Route::get($uri, $callback);
+//Route::post($uri, $callback);
+//Route::put($uri, $callback);
+//Route::patch($uri, $callback);
+//Route::delete($uri, $callback);
+//Route::options($uri, $callback);
 
+Route::match(['get', 'post'], '/', function () {
+    // ...
+});
+
+Route::any('/', function () {
+    // ...
+});
