@@ -55,3 +55,8 @@ use Illuminate\Http\Request;
 Route::get('/users', function (Request $request) {
     // ...
 });
+
+return '<form method="POST" action="/profile">
+@csrf
+...
+</form>';
