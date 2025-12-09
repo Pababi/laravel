@@ -12,6 +12,20 @@ return Application::configure(basePath: dirname(__DIR__))
         api: __DIR__.'/../routes/api.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        then: function () {
+            Route::middleware('api')
+                ->prefix('webhooks')
+                ->name('webhooks.')
+                ->group(base_path('routes/webhooks.php'));
+        },
+//        using: function () {
+//            Route::middleware('api')
+//                ->prefix('api')
+//                ->group(base_path('routes/api.php'));
+//
+//            Route::middleware('web')
+//                ->group(base_path('routes/web.php'));
+//        }
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
@@ -25,3 +39,5 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
+
+
