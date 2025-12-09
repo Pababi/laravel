@@ -78,3 +78,11 @@ Route::get('/posts/{post}/comments/{comment}', function (string $postId, string 
 Route::get('/user/{id}', function (Request $request, string $id) {
     return 'User '.$id;
 });
+
+Route::get('/user/{name?}', function (?string $name = null) {
+    return $name;
+});
+
+Route::get('/user/{name?}', function (?string $name = 'John') {
+    return $name;
+});
