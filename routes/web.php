@@ -135,4 +135,6 @@ Route::get('/user/{id}', function (string $id) {
     // Выполнится, только если параметр `{id}` имеет числовое значение...
 });
 
-
+Route::get('/search/{search}', function (string $search) {
+    return $search;
+})->where('search', '.*');
