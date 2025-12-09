@@ -67,3 +67,10 @@ Route::permanentRedirect('/here', '/there'); // Возвращает код в 3
 Route::view('/welcome', 'welcome');
 
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+
+Route::get('/user/{id}', function (string $id) {
+    return 'User ' . $id;
+});
+Route::get('/posts/{post}/comments/{comment}', function (string $postId, string $commentId) {
+    // ...
+});
