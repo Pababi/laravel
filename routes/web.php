@@ -74,3 +74,7 @@ Route::get('/user/{id}', function (string $id) {
 Route::get('/posts/{post}/comments/{comment}', function (string $postId, string $commentId) {
     // ...
 });
+
+Route::get('/user/{id}', function (Request $request, string $id) {
+    return 'User '.$id;
+});
