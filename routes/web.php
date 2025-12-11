@@ -138,3 +138,12 @@ Route::get('/user/{id}', function (string $id) {
 Route::get('/search/{search}', function (string $search) {
     return $search;
 })->where('search', '.*');
+
+Route::get('/user/profile', function () {
+    // ...
+})->name('profile');
+
+Route::get(
+    '/user/profile',
+    [UserProfileController::class, 'show']
+)->name('profile');
