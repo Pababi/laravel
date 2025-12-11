@@ -176,12 +176,23 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Обработка входящего запроса.
  *
- * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+ * @param \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
  */
-public function handle(Request $request, Closure $next): Response
+public
+function handle(Request $request, Closure $next): Response
 {
     if ($request->route()->named('profile')) {
         // ...
-    }
+    }return $next($request);
 
-    return $next($request);
+
+    Route::middleware(['first', 'second'])->group(function () {
+        Route::get('/', function () {
+            // Использует посредники `first` и `second`...
+        });
+
+        Route::get('/user/profile', function () {
+            // Использует посредники `first` и `second`...
+        });
+    });
+}
