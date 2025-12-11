@@ -147,3 +147,25 @@ Route::get(
     '/user/profile',
     [UserProfileController::class, 'show']
 )->name('profile');
+
+// Создание URL-адреса...
+$url = route('profile');
+
+// Создание перенаправления...
+return redirect()->route('profile');
+
+return to_route('profile');
+
+Route::get('/user/{id}/profile', function (string $id) {
+    // ...
+})->name('profile');
+
+$url = route('profile', ['id' => 1]);
+
+Route::get('/user/{id}/profile', function (string $id) {
+    // ...
+})->name('profile');
+
+$url = route('profile', ['id' => 1, 'photos' => 'yes']);
+
+// /user/1/profile?photos=yes
