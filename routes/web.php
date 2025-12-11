@@ -169,3 +169,19 @@ Route::get('/user/{id}/profile', function (string $id) {
 $url = route('profile', ['id' => 1, 'photos' => 'yes']);
 
 // /user/1/profile?photos=yes
+
+
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * Обработка входящего запроса.
+ *
+ * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+ */
+public function handle(Request $request, Closure $next): Response
+{
+    if ($request->route()->named('profile')) {
+        // ...
+    }
+
+    return $next($request);
