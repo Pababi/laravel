@@ -223,3 +223,22 @@ Route::name('admin.')->group(function () {
         // Маршруту присвоено имя `admin.users`...
     })->name('users');
 });
+
+use App\Models\User;
+
+Route::get('/users/{user}', function (User $user) {
+    return $user->email;
+});
+
+
+use App\Http\Controllers\UserController;
+use App\Models\User;
+
+// Определение маршрута...
+Route::get('/users/{user}', [UserController::class, 'show']);
+
+// Определение метода контроллера...
+public function show(User $user)
+{
+    return view('user.profile', ['user' => $user]);
+}
