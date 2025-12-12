@@ -288,3 +288,15 @@ enum Category: string
 Route::get('/categories/{category}', function (Category $category) {
     return $category->value;
 });
+
+/**
+ * Запуск любых служб приложения.
+ */
+public function boot(): void
+{
+    Route::model('user', User::class);
+}
+
+Route::get('/users/{user}', function (User $user) {
+    // ...
+});
