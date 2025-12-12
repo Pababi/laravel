@@ -384,3 +384,17 @@ RateLimiter::for('uploads', function (Request $request) {
         ? Limit::perMinute(100)->by($request->user()->id)
         : Limit::perMinute(10)->by($request->ip());
 });
+
+RateLimiter::for('login', function (Request $request) {
+    return [
+        Limit::perMinute(500),
+        Limit::perMinute(3)->by($request->input('email')),
+    ];
+});
+
+RateLimiter::for('uploads', function (Request $request) {
+    return [
+        Limit::perMinute(10)->by('minute:'.$request->user()->id),
+        Limit::perDay(1000)->by('day:'.$request->user()->id),
+    ];
+});
