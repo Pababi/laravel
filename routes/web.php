@@ -398,3 +398,13 @@ RateLimiter::for('uploads', function (Request $request) {
         Limit::perDay(1000)->by('day:'.$request->user()->id),
     ];
 });
+
+Route::middleware(['throttle:uploads'])->group(function () {
+    Route::post('/audio', function () {
+        // ...
+    });
+
+    Route::post('/video', function () {
+        // ...
+    });
+});
