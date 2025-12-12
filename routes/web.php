@@ -332,3 +332,7 @@ public function resolveChildRouteBinding($childType, $value, $field)
 {
     return parent::resolveChildRouteBinding($childType, $value, $field);
 }
+
+Route::fallback(function () {
+    // ...
+});
