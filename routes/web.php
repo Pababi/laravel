@@ -246,3 +246,15 @@ public function show(User $user)
 Route::get('/users/{user}', function (User $user) {
     return $user->email;
 })->withTrashed();
+
+
+use App\Models\Post;
+
+Route::get('/posts/{post:slug}', function (Post $post) {
+    return $post;
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+});
+
