@@ -203,3 +203,9 @@ Route::controller(OrderController::class)->group(function () {
     Route::get('/orders/{id}', 'show');
     Route::post('/orders', 'store');
 });
+
+Route::domain('{account}.example.com')->group(function () {
+    Route::get('/user/{id}', function (string $account, string $id) {
+        // ...
+    });
+});
