@@ -336,3 +336,38 @@ public function resolveChildRouteBinding($childType, $value, $field)
 Route::fallback(function () {
     // ...
 });
+
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
+
+/**
+ * Запуск любых служб приложения.
+ */
+protected function boot(): void
+{
+    RateLimiter::for('api', function (Request $request) {
+        return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+    });
+}
+
+/**
+ * Запуск любых служб приложения.
+ */
+protected function boot(): void
+{
+    RateLimiter::for('global', function (Request $request) {
+        return Limit::perMinute(1000);
+    });
+}
+
+RateLimiter::for('global', function (Request $request) {
+    return Limit::perMinute(1000)->response(function (Request $request, array $headers) {
+        return response('Custom response...', 429, $headers);
+    });
+});
+
+RateLimiter::for('uploads', function (Request $request) {
+    return $request->user()->vipCustomer()
+        ? Limit::none()
+        : Limit::perMinute(100);
+});
