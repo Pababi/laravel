@@ -183,7 +183,8 @@ function handle(Request $request, Closure $next): Response
 {
     if ($request->route()->named('profile')) {
         // ...
-    }return $next($request);
+    }
+    return $next($request);
 
 
     Route::middleware(['first', 'second'])->group(function () {
@@ -207,5 +208,12 @@ Route::controller(OrderController::class)->group(function () {
 Route::domain('{account}.example.com')->group(function () {
     Route::get('/user/{id}', function (string $account, string $id) {
         // ...
+    });
+});
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        // Соответствует URL-адресу `/admin/users`
     });
 });
