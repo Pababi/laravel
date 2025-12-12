@@ -271,3 +271,9 @@ Route::scopeBindings()->group(function () {
 Route::get('/users/{user}/posts/{post:slug}', function (User $user, Post $post) {
     return $post;
 })->withoutScopedBindings();
+
+Route::get('/locations/{location:slug}', [LocationsController::class, 'show'])
+    ->name('locations.view')
+    ->missing(function (Request $request) {
+        return Redirect::route('locations.index');
+    });
