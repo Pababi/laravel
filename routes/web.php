@@ -242,3 +242,7 @@ public function show(User $user)
 {
     return view('user.profile', ['user' => $user]);
 }
+
+Route::get('/users/{user}', function (User $user) {
+    return $user->email;
+})->withTrashed();
