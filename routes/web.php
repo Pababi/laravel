@@ -371,3 +371,16 @@ RateLimiter::for('uploads', function (Request $request) {
         ? Limit::none()
         : Limit::perMinute(100);
 });
+
+
+RateLimiter::for('uploads', function (Request $request) {
+    return $request->user()->vipCustomer()
+        ? Limit::none()
+        : Limit::perMinute(100)->by($request->ip());
+});
+
+RateLimiter::for('uploads', function (Request $request) {
+    return $request->user()
+        ? Limit::perMinute(100)->by($request->user()->id)
+        : Limit::perMinute(10)->by($request->ip());
+});
