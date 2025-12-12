@@ -258,7 +258,16 @@ Route::get('/posts/{post:slug}', function (Post $post) {
     }
 });
 
-Route::get('/users/{user}/posts/{post:slug}', function (User $user, Post $post) {
+Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
     return $post;
+})->scopeBindings();
+
+Route::scopeBindings()->group(function () {
+    Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
+        return $post;
+    });
 });
 
+Route::get('/users/{user}/posts/{post:slug}', function (User $user, Post $post) {
+    return $post;
+})->withoutScopedBindings();
