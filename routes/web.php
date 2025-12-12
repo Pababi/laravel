@@ -415,3 +415,8 @@ return '<form action="/example" method="POST">
 </form>';
 @method('PUT');
 @csrf;
+
+
+$route = Route::current(); // Illuminate\Routing\Route
+$name = Route::currentRouteName(); // string
+$action = Route::currentRouteAction(); // string
