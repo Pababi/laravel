@@ -217,3 +217,9 @@ Route::prefix('admin')->group(function () {
         // Соответствует URL-адресу `/admin/users`
     });
 });
+
+Route::name('admin.')->group(function () {
+    Route::get('/users', function () {
+        // Маршруту присвоено имя `admin.users`...
+    })->name('users');
+});
