@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Enums;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -277,3 +277,14 @@ Route::get('/locations/{location:slug}', [LocationsController::class, 'show'])
     ->missing(function (Request $request) {
         return Redirect::route('locations.index');
     });
+
+
+enum Category: string
+{
+    case Fruits = 'fruits';
+    case People = 'people';
+}
+
+Route::get('/categories/{category}', function (Category $category) {
+    return $category->value;
+});
