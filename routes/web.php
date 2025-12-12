@@ -258,3 +258,7 @@ Route::get('/posts/{post:slug}', function (Post $post) {
     }
 });
 
+Route::get('/users/{user}/posts/{post:slug}', function (User $user, Post $post) {
+    return $post;
+});
+
