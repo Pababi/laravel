@@ -1,5 +1,6 @@
 <?php
 namespace App\Enums;
+use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +16,7 @@ Route::post('/create-post', function () {
     return "тут будут мои функции123";
 });
 
-Route::get('/greeting', function () {
-    return 'Hello World';
-});
+Route::get('/greeting', [GreetingController::class, 'greeting']);
 
 Route::get('/posts/', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
