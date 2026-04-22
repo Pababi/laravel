@@ -1,6 +1,7 @@
 <?php
 namespace App\Enums;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,3 +18,5 @@ Route::post('/create-post', function () {
 Route::get('/greeting', function () {
     return 'Hello World';
 });
+
+Route::get('/posts/', [PostController::class, 'index']);
