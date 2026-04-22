@@ -18,6 +18,10 @@ class PageController
         return 'Текущий id='. $id;
     }
     public function createPost(Request $request) {
+        $array=$request->all();
+        var_dump($array);
+        echo $array['title'];
+        dd($array['description']);
         dd($request->all());
     }
 }
