@@ -8,4 +8,9 @@ class PostController
         return "Это страница post контроллера";
     }
 
+    public function show(string $id)
+    {
+        return "Это страница просмотра поста ". $id;
+    }
+
 }
