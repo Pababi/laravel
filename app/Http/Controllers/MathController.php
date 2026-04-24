@@ -27,5 +27,18 @@ class MathController
         }
 
     }
-
+    public function mathForm()
+    {
+        $html = '<form method="POST" action="/math/">
+        <input type="text" name="a" placeholder="Значение а">
+        <input type="text" name="b" placeholder="Значение b">
+        <input type="text" name="c" placeholder="Значение c">
+        <input type="submit">
+        </form>';
+        return $html;
+    }
+    public function mathFormPost(int $a, int $b, int $c)
+    {
+        return "Значение a=" . $a . "<br>" ."Значение b=" . $b . "<br>". "Значение с=" . $c . "<br>";
+    }
 }
