@@ -7,7 +7,7 @@ use Illuminate\Validation\Validator;
 
 class MathController
 {
-    private function quadraticEquation(int $a, int $b, int $c) {
+    private function quadraticEquation(int $a, int $b, int $c, string $name, string $surname) {
         echo "a=" . $a . "<br>";
         echo "b=" . $b . "<br>";
         echo "c=" . $c . "<br>";
@@ -28,6 +28,8 @@ class MathController
             echo "x1 = " . $x1 . "<br>";
             echo "x2 = " . $x2 . "<br>";
         }
+        echo 'Ваша фамилия - '. $surname. '<br>';
+        echo 'Ваше имя - ' .$name. '<br>';
 
     }
     public function mathForm()
@@ -36,6 +38,8 @@ class MathController
       <input type="text" name="a" placeholder="Значение а">
         <input type="text" name="b"  placeholder="Значение b">
         <input type="text" name="c"  placeholder="Значение c">
+        <input type="text" name="surname" placeholder="Фамилия">
+        <input type="text" name="name" placeholder="Имя">
         <input type="submit">
         </form>';
         echo $html;
@@ -52,12 +56,16 @@ class MathController
     }
     public function mathFormPost(Request $request)
     {
+
         $validated = $request->validate([
+
             'a' => ['required', 'integer'],
             'b' => ['required', 'integer'],
             'c' => ['required', 'integer'],
+            'surname' => ['required', 'min:3', 'ascii', 'max:17'],
+            'name' => ['required', 'min:3', 'ascii', 'max:58'],
         ]);
-        $this->quadraticEquation($validated['a'],$validated['b'],$validated['c']);
+        $this->quadraticEquation($validated['a'],$validated['b'],$validated['c'] ,$validated['surname'],$validated['name']);
     }
 
 }
