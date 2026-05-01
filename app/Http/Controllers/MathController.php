@@ -33,9 +33,9 @@ class MathController
     public function mathForm()
     {
         $html = '<form method="POST" action="/math">
-      <input type="text" name="a" value="2" placeholder="Значение а">
-        <input type="text" name="b" value="2" placeholder="Значение b">
-        <input type="text" name="c" value="2" placeholder="Значение c">
+      <input type="text" name="a" placeholder="Значение а">
+        <input type="text" name="b"  placeholder="Значение b">
+        <input type="text" name="c"  placeholder="Значение c">
         <input type="submit">
         </form>';
         echo $html;
@@ -52,25 +52,12 @@ class MathController
     }
     public function mathFormPost(Request $request)
     {
-        $array=$request->all();
         $validated = $request->validate([
             'a' => ['required', 'integer'],
             'b' => ['required', 'integer'],
             'c' => ['required', 'integer'],
         ]);
-//        if ($validated->fails()) {
-//            $errors= $validated->errors();
-//            dd($errors);
-//        }
-//        $validator = Validator::make($request->all(), [
-//            'title' => 'required|unique:posts|max:255',
-//            'body' => 'required',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            dd($validator->errors());
-//        }
-//        $this->quadraticEquation($array['a'],$array['b'],$array['c']);
+        $this->quadraticEquation($validated['a'],$validated['b'],$validated['c']);
     }
 
 }
