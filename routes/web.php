@@ -23,5 +23,4 @@ Route::get('/posts/', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 Route::get('/math', [MathController::class, 'mathForm'] );
 Route::post('/math' , [MathController::class, 'mathFormPost']);
-//Route::post('/math/{id}' , [MathController::class, 'mathFormPost']);
 
