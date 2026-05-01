@@ -50,7 +50,7 @@ class MathController
         // Теперь можно использовать $errors
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
-                echo $message; // или добавить в HTML
+                echo $message . '<br>'; // или добавить в HTML
             }
         }
     }
