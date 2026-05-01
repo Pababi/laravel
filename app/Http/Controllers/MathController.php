@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class MathController
 {
-    public function quadraticEquation(int $a, int $b, int $c) {
+    private function quadraticEquation(int $a, int $b, int $c) {
         echo "a=" . $a . "<br>";
         echo "b=" . $b . "<br>";
         echo "c=" . $c . "<br>";
@@ -29,16 +31,17 @@ class MathController
     }
     public function mathForm()
     {
-        $html = '<form method="POST" action="/math/">
-        <input type="text" name="a" placeholder="Значение а">
-        <input type="text" name="b" placeholder="Значение b">
-        <input type="text" name="c" placeholder="Значение c">
+        $html = '<form method="POST" action="/math">
+        <input type="text" name="a" value="2" placeholder="Значение а">
+        <input type="text" name="b" value="2" placeholder="Значение b">
+        <input type="text" name="c" value="2" placeholder="Значение c">
         <input type="submit">
         </form>';
         return $html;
     }
-    public function mathFormPost(int $a, int $b, int $c)
+    public function mathFormPost(Request $request)
     {
-        return "Значение a=" . $a . "<br>" ."Значение b=" . $b . "<br>". "Значение с=" . $c . "<br>";
+        $array=$request->all();
+        $this->quadraticEquation($array['a'],$array['b'],$array['c']);
     }
 }

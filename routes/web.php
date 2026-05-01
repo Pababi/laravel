@@ -21,7 +21,7 @@ Route::get('/greeting', [GreetingController::class, 'greeting']);
 
 Route::get('/posts/', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
-Route::get('/math/', [MathController::class, 'quadraticEquation'] );
-Route::get('/math/' , [MathController::class, 'mathForm']);
-Route::post('/math/{id}' , [MathController::class, 'mathFormPost']);
+Route::get('/math', [MathController::class, 'mathForm'] );
+Route::post('/math' , [MathController::class, 'mathFormPost']);
+//Route::post('/math/{id}' , [MathController::class, 'mathFormPost']);
 
