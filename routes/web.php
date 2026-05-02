@@ -1,5 +1,6 @@
 <?php
 namespace App\Enums;
+use App\Http\Controllers\CircleSController;
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
@@ -23,4 +24,6 @@ Route::get('/posts/', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 Route::get('/math', [MathController::class, 'mathForm'] );
 Route::post('/math' , [MathController::class, 'mathFormPost']);
+Route::get('/circle', [CircleSController::class, 'circleForm']);
+Route::post('/circle' , [CircleSController::class, 'circleFormPost']);
 
