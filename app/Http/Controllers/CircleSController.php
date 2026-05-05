@@ -30,7 +30,7 @@ class CircleSController
         // Теперь можно использовать $errors
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
-                echo "<span style=\"color: red;\">$message</span>" . '<br>';
+                echo '<span style="color: red;">$message</span>' . '<br>';
             } // или добавить в HTML
         }
     }
