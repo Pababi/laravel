@@ -38,7 +38,7 @@ class CircleSController
 
     public function circleFormPost(CircleSRequest $request)
     {
-        dd($request['r']);
-//        $this->SCircle($validated['r']);
+        $data=$request->all();
+        $this->SCircle($data['r']);
     }
 }
