@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CircleSRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
@@ -30,16 +31,14 @@ class CircleSController
         // Теперь можно использовать $errors
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
-                echo '<span style="color: red;">$message</span>' . '<br>';
+                echo '<span style="color: red;">'.$message .'</span>' . '<br>';
             } // или добавить в HTML
         }
     }
 
-    public function circleFormPost(Request $request)
+    public function circleFormPost(CircleSRequest $request)
     {
-        $validated = $request->validate([
-            'r' => ['required', 'integer', 'numeric'],
-        ]);
-        $this->SCircle($validated['r']);
+        dd($request['r']);
+//        $this->SCircle($validated['r']);
     }
 }
