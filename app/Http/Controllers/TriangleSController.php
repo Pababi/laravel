@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TriangleSRequest;
+
 class TriangleSController
 {
     private function TriangleS(int $h, int $a)
@@ -15,8 +17,8 @@ class TriangleSController
     public function TriangleSForm()
     {
         $html= '<form method="POST" action="/triangle">
-        <input type="number" name="a" placeholder="Длина основания a">
-        <input type="number" name="h" placeholder="Высота h">
+        <input type="text" name="a" placeholder="Длина основания a">
+        <input type="text" name="h" placeholder="Высота h">
         <input type="submit">
         </form>';
 
@@ -29,6 +31,10 @@ class TriangleSController
                 echo '<span style="color: red;">'.$message .'</span>' . '<br>';
             }
         }
+    }
+    public function TriangleSFormPost(TriangleSRequest $request)
+    {
+        $this->TriangleS($request['a'], $request['h']);
     }
 
 

@@ -28,3 +28,4 @@ Route::post('/math' , [MathController::class, 'mathFormPost']);
 Route::get('/circle', [CircleSController::class, 'circleForm']);
 Route::post('/circle' , [CircleSController::class, 'circleFormPost']);
 Route::get('/triangle', [TriangleSController::class, 'TriangleSForm']);
+Route::post('/triangle' , [TriangleSController::class, 'TriangleSFormPost']);
