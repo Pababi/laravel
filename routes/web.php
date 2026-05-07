@@ -27,5 +27,5 @@ Route::get('/math', [MathController::class, 'mathForm'] );
 Route::post('/math' , [MathController::class, 'mathFormPost']);
 Route::get('/circle', [CircleSController::class, 'circleForm']);
 Route::post('/circle' , [CircleSController::class, 'circleFormPost']);
-Route::get('/triangle', [TriangleSController::class, 'TriangleSForm']);
-Route::post('/triangle' , [TriangleSController::class, 'TriangleSFormPost']);
+Route::get('/triangle', [TriangleSController::class, 'triangleSForm']);
+Route::post('/triangle' , [TriangleSController::class, 'triangleSFormPost']);
