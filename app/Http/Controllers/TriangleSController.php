@@ -40,6 +40,7 @@ class TriangleSController
         echo 'Высота = ' . $height . '<br>';
         echo 'Длина основания = ' . $length . '<br>';
         echo 'Площадь треугольника = ' . $area;
+        echo 'Площадь двух треугольников = '. $area*2;
     }
 
 
