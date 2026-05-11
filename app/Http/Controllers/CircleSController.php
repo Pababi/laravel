@@ -11,10 +11,8 @@ class CircleSController
     private function areaCircle(int $radius)
     {
         $pi = 3.14;
-        echo "π= " . $pi . '<br>';
-        echo "R= " . $radius. '<br>';
         $Area = $pi * $radius * $radius;
-        echo "Площадь круга = " . $Area;
+        return $Area;
     }
 
     public function circleForm()
@@ -31,14 +29,20 @@ class CircleSController
         // Теперь можно использовать $errors
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
-                echo '<span style="color: red;">'.$message .'</span>' . '<br>';
+                echo '<span style="color: red;">' . $message . '</span>' . '<br>';
             } // или добавить в HTML
         }
     }
 
     public function circleFormPost(CircleSRequest $request)
     {
-        $data=$request->all();
-        $this->areaCircle($data['radius']);
+        $data = $request->all();
+        $radius = $data['radius'];
+        $Area = $this->areaCircle($radius);
+        $pi=3.14;
+
+        echo "π= " . $pi . '<br>';
+        echo "R= " . $radius . '<br>';
+        echo "Площадь круга = " . $Area;
     }
 }
