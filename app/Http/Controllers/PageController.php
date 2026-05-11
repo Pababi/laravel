@@ -14,7 +14,7 @@ class PageController
 </form>';
         return $html;
     }
-    public function showSkills(int $id) {
+    public function showSkills(int $id): string {
         return 'Текущий id='. $id;
     }
     public function createPost(Request $request) {
