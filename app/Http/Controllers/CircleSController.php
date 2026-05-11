@@ -8,19 +8,19 @@ use Illuminate\Validation\Validator;
 
 class CircleSController
 {
-    private function SCircle(int $r)
+    private function areaCircle(int $radius)
     {
-        $p = 3.14;
-        echo "π= " . $p . '<br>';
-        echo "R= " . $r. '<br>';
-        $S = $p * $r * $r;
-        echo "Площадь круга = " . $S;
+        $pi = 3.14;
+        echo "π= " . $pi . '<br>';
+        echo "R= " . $radius. '<br>';
+        $Area = $pi * $radius * $radius;
+        echo "Площадь круга = " . $Area;
     }
 
     public function circleForm()
     {
         $html = '<form method="POST" action="/circle">
-      <input type="text" name="r" placeholder="Значение r">
+      <input type="text" name="radius" placeholder="Значение r">
         <input type="submit">
         </form>';
         echo $html;
@@ -39,6 +39,6 @@ class CircleSController
     public function circleFormPost(CircleSRequest $request)
     {
         $data=$request->all();
-        $this->SCircle($data['r']);
+        $this->areaCircle($data['radius']);
     }
 }

@@ -10,16 +10,16 @@ class CircleSRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'r' => ['required', 'integer', 'numeric'],
+            'radius' => ['required', 'integer', 'numeric'],
         ];
     }
 
     public function messages(): array
     {
         return [
-            'r' => 'Неккоректное поле',
-            'r.integer' => 'Необходимо корректное число радиуса',
-            'r.required' => 'Поле не должно быть пустым'
+            'radius' => 'Некорректное поле',
+            'radius.integer' => 'Необходимо корректное число радиуса',
+            'radius.required' => 'Поле не должно быть пустым'
         ];
 
     }
