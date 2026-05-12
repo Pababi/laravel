@@ -10,8 +10,8 @@ class WayRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'speed' => 'required', 'integer', 'numeric',
-            'time' => 'required', 'integer', 'numeric',
+            'speed' => ['required', 'integer', 'numeric'],
+            'time' => ['required', 'integer', 'numeric'],
         ];
     }
     public function messages(): array
