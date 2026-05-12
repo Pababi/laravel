@@ -5,7 +5,8 @@ use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\TriangleSController;
+use App\Http\Controllers\TriangleAreaController;
+use App\Http\Controllers\WayController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,5 +28,6 @@ Route::get('/math', [MathController::class, 'mathForm'] );
 Route::post('/math' , [MathController::class, 'mathFormPost']);
 Route::get('/circle', [CircleSController::class, 'circleForm']);
 Route::post('/circle' , [CircleSController::class, 'circleFormPost']);
-Route::get('/triangle', [TriangleSController::class, 'triangleAreaForm']);
-Route::post('/triangle' , [TriangleSController::class, 'triangleAreaFormPost']);
+Route::get('/triangle', [TriangleAreaController::class, 'triangleAreaForm']);
+Route::post('/triangle' , [TriangleAreaController::class, 'triangleAreaFormPost']);
+Route::get('/way', [WayController::class, 'wayForm']);
