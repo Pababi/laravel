@@ -34,3 +34,4 @@ Route::post('/triangle' , [TriangleAreaController::class, 'triangleAreaFormPost'
 Route::get('/way', [WayController::class, 'wayForm']);
 Route::post('/way', [WayController::class, 'wayFormPost']);
 Route::get('/length_circle', [LengthCircleController::class, 'lengthCircleForm']);
+Route::post('/length_circle', [LengthCircleController::class, 'lengthCircleFormPost']);

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LengthCircleRequest;
+
 class LengthCircleController
 {
     private function lengthCircle(int $radius): float
@@ -27,6 +29,16 @@ class LengthCircleController
             }
         }
 
+    }
+    public function lengthCircleFormPost(LengthCircleRequest $request)
+    {
+        $radius = $request['radius'];
+        $lengthCircle = $this->lengthCircle($radius);
+        $pi=3.14;
+
+        echo "π= " . $pi . '<br>';
+        echo "R= " . $radius . '<br>';
+        echo "Длина окружности = " . $lengthCircle;
     }
 
 }
