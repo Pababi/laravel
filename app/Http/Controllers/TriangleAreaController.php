@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TriangleAreaRequest;
 
-class TriangleSController
+class TriangleAreaController
 {
     private function triangleArea(int $height, int $length): int
     {
