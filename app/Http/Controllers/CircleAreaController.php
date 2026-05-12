@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CircleSRequest;
+use App\Http\Requests\CircleAreaRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
-class CircleSController
+class CircleAreaController
 {
     private function areaCircle(int $radius): float
     {
@@ -34,7 +34,7 @@ class CircleSController
         }
     }
 
-    public function circleFormPost(CircleSRequest $request)
+    public function circleFormPost(CircleAreaRequest $request)
     {
         $data = $request->all();
         $radius = $data['radius'];

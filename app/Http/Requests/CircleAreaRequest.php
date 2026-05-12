@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CircleSRequest extends FormRequest
+class CircleAreaRequest extends FormRequest
 {
 
     public function rules(): array

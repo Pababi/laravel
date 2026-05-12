@@ -1,6 +1,6 @@
 <?php
 namespace App\Enums;
-use App\Http\Controllers\CircleSController;
+use App\Http\Controllers\CircleAreaController;
 use App\Http\Controllers\EinsteinFormulaController;
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\LengthCircleController;
@@ -28,8 +28,8 @@ Route::get('/posts/', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 Route::get('/math', [MathController::class, 'mathForm'] );
 Route::post('/math' , [MathController::class, 'mathFormPost']);
-Route::get('/circle', [CircleSController::class, 'circleForm']);
-Route::post('/circle' , [CircleSController::class, 'circleFormPost']);
+Route::get('/circle', [CircleAreaController::class, 'circleForm']);
+Route::post('/circle' , [CircleAreaController::class, 'circleFormPost']);
 Route::get('/triangle', [TriangleAreaController::class, 'triangleAreaForm']);
 Route::post('/triangle' , [TriangleAreaController::class, 'triangleAreaFormPost']);
 Route::get('/way', [WayController::class, 'wayForm']);
