@@ -8,7 +8,7 @@ use Illuminate\Validation\Validator;
 
 class CircleSController
 {
-    private function areaCircle(int $radius)
+    private function areaCircle(int $radius): float
     {
         $pi = 3.14;
         $Area = $pi * $radius * $radius;
