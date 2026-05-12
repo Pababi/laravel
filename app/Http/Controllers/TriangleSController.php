@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TriangleSRequest;
+use App\Http\Requests\TriangleAreaRequest;
 
 class TriangleSController
 {
@@ -12,7 +12,7 @@ class TriangleSController
         return $area;
     }
 
-    public function triangleSForm()
+    public function triangleAreaForm()
     {
         $html = '<form method="POST" action="/triangle">
         <input type="text" name="length" placeholder="Длина основания a">
@@ -31,7 +31,7 @@ class TriangleSController
         }
     }
 
-    public function triangleSFormPost(TriangleSRequest $request)
+    public function triangleAreaFormPost(TriangleAreaRequest $request)
     {
         $height = $request['height'];
         $length = $request['length'];
