@@ -2,6 +2,7 @@
 namespace App\Enums;
 use App\Http\Controllers\CircleSController;
 use App\Http\Controllers\GreetingController;
+use App\Http\Controllers\LengthCircleController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
@@ -32,3 +33,4 @@ Route::get('/triangle', [TriangleAreaController::class, 'triangleAreaForm']);
 Route::post('/triangle' , [TriangleAreaController::class, 'triangleAreaFormPost']);
 Route::get('/way', [WayController::class, 'wayForm']);
 Route::post('/way', [WayController::class, 'wayFormPost']);
+Route::get('/length_circle', [LengthCircleController::class, 'lengthCircleForm']);
