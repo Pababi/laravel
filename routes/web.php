@@ -37,3 +37,4 @@ Route::post('/way', [WayController::class, 'wayFormPost']);
 Route::get('/length_circle', [LengthCircleController::class, 'lengthCircleForm']);
 Route::post('/length_circle', [LengthCircleController::class, 'lengthCircleFormPost']);
 Route::get('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaForm']);
+Route::post('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaFormPost']);
