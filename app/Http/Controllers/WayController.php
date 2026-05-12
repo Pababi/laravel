@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WayRequest;
+
 class WayController
 {
     private function way(int $speed, int $time): int
@@ -25,6 +27,17 @@ class WayController
                 echo '<span style="color: red;">' . $message . '</span>' . '<br>';
             }
         }
+    }
+
+    public function wayFormPost(WayRequest $request)
+    {
+        $speed = $request['speed'];
+        $time = $request['time'];
+        $way = $this->way($time, $speed);
+
+        echo 'Скорость = ' . $speed . '<br>';
+        echo 'Длина основания = ' . $time . '<br>';
+        echo 'Путь = ' . $way . '<br>';
     }
 
 }
