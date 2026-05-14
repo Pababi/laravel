@@ -1,6 +1,6 @@
 <?php
 namespace App\Enums;
-use App\Http\Controllers\CircleAreaController;
+use App\Http\Controllers\CircleArea\CircleAreaController;
 use App\Http\Controllers\EinsteinFormulaController;
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\LengthCircleController;
@@ -10,7 +10,6 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TriangleAreaController;
 use App\Http\Controllers\WayController;
 use Illuminate\Support\Facades\Route;
-
 
 
 Route::get('/', [PageController::class, 'showHome']);

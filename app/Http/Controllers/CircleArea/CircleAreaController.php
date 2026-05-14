@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\CircleArea;
 
 use App\Http\Requests\CircleAreaRequest;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
 
 class CircleAreaController
 {
-    private function areaCircle(int $radius): float
+    private function areaCircle(int $radius): AreaCircleResult
     {
         $pi = 3.14;
-        $Area = $pi * $radius * $radius;
-        return $Area;
+        $area = $pi * $radius * $radius;
+        return new AreaCircleResult($pi, $area);
     }
 
     public function circleForm()
@@ -37,12 +36,11 @@ class CircleAreaController
     public function circleFormPost(CircleAreaRequest $request)
     {
         $data = $request->all();
-        $radius = $data['radius'];
-        $Area = $this->areaCircle($radius);
-        $pi=3.14;
+        $radius = $request['radius'];
+        $circleAreaResult = $this->areaCircle($radius);
 
-        echo "π= " . $pi . '<br>';
+        echo "π= " . $circleAreaResult->pi . '<br>';
         echo "R= " . $radius . '<br>';
-        echo "Площадь круга = " . $Area;
+        echo "Площадь круга = " . $circleAreaResult->area . '<br>';
     }
 }
