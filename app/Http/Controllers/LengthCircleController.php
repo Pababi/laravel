@@ -12,7 +12,8 @@ class LengthCircleController
         $lengthCircle = 2 * $pi * $radius;
         return $lengthCircle;
     }
-    public function lengthCircleForm()
+
+    public function lengthCircleForm(): void
     {
         $html = '<form method="POST" action="/length_circle">
         <input type="text" name="radius" placeholder="Радиус">
@@ -30,11 +31,12 @@ class LengthCircleController
         }
 
     }
-    public function lengthCircleFormPost(LengthCircleRequest $request)
+
+    public function lengthCircleFormPost(LengthCircleRequest $request): void
     {
         $radius = $request['radius'];
         $lengthCircle = $this->lengthCircle($radius);
-        $pi=3.14;
+        $pi = 3.14;
 
         echo "π= " . $pi . '<br>';
         echo "R= " . $radius . '<br>';

@@ -12,7 +12,7 @@ class WayController
         return $way;
     }
 
-    public function wayForm()
+    public function wayForm(): void
     {
         $html = '<form action="/way" method="POST">
      <input type="text" name="speed" placeholder="Скорость">
@@ -29,7 +29,7 @@ class WayController
         }
     }
 
-    public function wayFormPost(WayRequest $request)
+    public function wayFormPost(WayRequest $request): void
     {
         $speed = $request['speed'];
         $time = $request['time'];

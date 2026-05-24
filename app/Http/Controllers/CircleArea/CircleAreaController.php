@@ -14,7 +14,7 @@ class CircleAreaController
         return new AreaCircleResult($pi, $area);
     }
 
-    public function circleForm()
+    public function circleForm(): void
     {
         $html = '<form method="POST" action="/circle">
       <input type="text" name="radius" placeholder="Значение r">
@@ -33,12 +33,11 @@ class CircleAreaController
         }
     }
 
-    public function circleFormPost(CircleAreaRequest $request)
+    public function circleFormPost(CircleAreaRequest $request): void
     {
         $data = $request->all();
         $radius = $request['radius'];
         $circleAreaResult = $this->areaCircle($radius);
-
         echo "π= " . $circleAreaResult->pi . '<br>';
         echo "R= " . $radius . '<br>';
         echo "Площадь круга = " . $circleAreaResult->area . '<br>';

@@ -12,7 +12,7 @@ class TriangleAreaController
         return $area;
     }
 
-    public function triangleAreaForm()
+    public function triangleAreaForm(): void
     {
         $html = '<form method="POST" action="/triangle">
         <input type="text" name="length" placeholder="Длина основания a">
@@ -31,7 +31,7 @@ class TriangleAreaController
         }
     }
 
-    public function triangleAreaFormPost(TriangleAreaRequest $request)
+    public function triangleAreaFormPost(TriangleAreaRequest $request): void
     {
         $height = $request['height'];
         $length = $request['length'];

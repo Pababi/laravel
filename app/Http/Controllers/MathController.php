@@ -7,7 +7,7 @@ use Illuminate\Validation\Validator;
 
 class MathController
 {
-    private function quadraticEquation(int $a, int $b, int $c, string $name, string $surname) {
+    private function quadraticEquation(int $a, int $b, int $c, string $name, string $surname): string  {
         echo "a=" . $a . "<br>";
         echo "b=" . $b . "<br>";
         echo "c=" . $c . "<br>";
@@ -32,7 +32,7 @@ class MathController
         echo 'Ваше имя - ' .$name. '<br>';
 
     }
-    public function mathForm()
+    public function mathForm() : void
     {
         $html = '<form method="POST" action="/math">
       <input type="text" name="a" placeholder="Значение а">
@@ -54,7 +54,7 @@ class MathController
             }
         }
     }
-    public function mathFormPost(Request $request)
+    public function mathFormPost(Request $request): void
     {
 
         $validated = $request->validate([

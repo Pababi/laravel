@@ -12,7 +12,7 @@ class EinsteinFormulaController
         $energy = $weight * $speedLight * $speedLight;
         return $energy;
     }
-    public function einsteinFormulaForm()
+    public function einsteinFormulaForm(): void
     {
         $html = '<form action="/einstein" method="post">
         <input type="text" name="weight" placeholder="Масса">
@@ -29,7 +29,7 @@ class EinsteinFormulaController
         }
 
     }
-    public function einsteinFormulaFormPost(EinsteinFormulaRequest $request)
+    public function einsteinFormulaFormPost(EinsteinFormulaRequest $request): void
     {
         $weight = $request['weight'];
         $speedLight = 299792458;

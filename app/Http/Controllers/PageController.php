@@ -5,14 +5,14 @@ use Illuminate\Http\Request;
 
 class PageController
 {
-    public function showHome()
+    public function showHome(): void
     {
         $html = '<form method="post" action="/skills">
 <input type="text" value="Create Post" name="title">
 <input type="text" value="Описание" name="description">
 <button>Отправить</button>
 </form>';
-        return $html;
+        echo  $html;
     }
     public function showSkills(int $id): string {
         return 'Текущий id='. $id;
