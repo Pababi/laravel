@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\TrieangleArea;
 
 use App\Http\Requests\TriangleAreaRequest;
 
 class TriangleAreaController
 {
-    private function triangleArea(int $height, int $length): int
+    private function triangleArea(int $height, int $length): TriangleAreaResult
     {
         $area = 1 / 2 * $length * $height;
-        return $area;
+        return new TriangleAreaResult($area);
     }
 
     public function triangleAreaForm(): void
@@ -39,8 +39,8 @@ class TriangleAreaController
 
         echo 'Высота = ' . $height . '<br>';
         echo 'Длина основания = ' . $length . '<br>';
-        echo 'Площадь треугольника = ' . $area;
-        echo 'Площадь двух треугольников = '. $area*2;
+        echo 'Площадь треугольника = ' . $area->area;
+        echo 'Площадь двух треугольников = '. $area->area*2;
     }
 
 
