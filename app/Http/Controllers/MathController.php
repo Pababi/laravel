@@ -7,7 +7,7 @@ use Illuminate\Validation\Validator;
 
 class MathController
 {
-    private function quadraticEquation(int $a, int $b, int $c, string $name, string $surname): string  {
+    private function quadraticEquation(int $a, int $b, int $c, string $name, string $surname) {
         echo "a=" . $a . "<br>";
         echo "b=" . $b . "<br>";
         echo "c=" . $c . "<br>";
@@ -30,7 +30,6 @@ class MathController
         }
         echo 'Ваша фамилия - '. $surname. '<br>';
         echo 'Ваше имя - ' .$name. '<br>';
-
     }
     public function mathForm() : void
     {

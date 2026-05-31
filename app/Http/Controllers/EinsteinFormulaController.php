@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\EinsteinFormula\EinsteinFormulaResult;
 use App\Http\Requests\EinsteinFormulaRequest;
 
 class EinsteinFormulaController
 {
-    private function einsteinFormula(int $weight): int
+    private function einsteinFormula(int $weight): EinsteinFormulaResult
     {
         $speedLight = 299792458;
         $energy = $weight * $speedLight * $speedLight;
-        return $energy;
+        return new EinsteinFormulaResult($speedLight, $energy);
     }
     public function einsteinFormulaForm(): void
     {
@@ -32,12 +33,11 @@ class EinsteinFormulaController
     public function einsteinFormulaFormPost(EinsteinFormulaRequest $request): void
     {
         $weight = $request['weight'];
-        $speedLight = 299792458;
-        $energy = $this->einsteinFormula($weight);
+        $einsteinFormulaResult = $this->einsteinFormula($weight);
 
         echo 'Масса= '. $weight . '<br>';
-        echo 'Скорость света= '. $speedLight . '<br>';
-        Echo 'Эквивалентность массы и энергии= '. $energy . '<br>';
+        echo 'Скорость света= '. $einsteinFormulaResult->speedLight . '<br>';
+        Echo 'Эквивалентность массы и энергии= '. $einsteinFormulaResult->energy . '<br>';
     }
 
 }
