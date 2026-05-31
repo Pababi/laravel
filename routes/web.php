@@ -8,7 +8,7 @@ use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TrieangleArea\TriangleAreaController;
-use App\Http\Controllers\WayController;
+use App\Http\Controllers\WayFormula\WayController;
 use Illuminate\Support\Facades\Route;
 
 

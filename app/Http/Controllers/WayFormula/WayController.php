@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WayFormula;
 
 use App\Http\Requests\WayRequest;
 
 class WayController
 {
-    private function way(int $speed, int $time): int
+    private function way(int $speed, int $time): WayResult
     {
         $way = $speed * $time;
-        return $way;
+        return new WayResult($way);
     }
 
     public function wayForm(): void
@@ -37,7 +37,7 @@ class WayController
 
         echo 'Скорость = ' . $speed . '<br>';
         echo 'Длина основания = ' . $time . '<br>';
-        echo 'Путь = ' . $way . '<br>';
+        echo 'Путь = ' . $way->way . '<br>';
     }
 
 }
