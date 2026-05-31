@@ -1,9 +1,9 @@
 <?php
 namespace App\Enums;
 use App\Http\Controllers\CircleArea\CircleAreaController;
-use App\Http\Controllers\EinsteinFormulaController;
+use App\Http\Controllers\EinsteinFormula\EinsteinFormulaController;
 use App\Http\Controllers\GreetingController;
-use App\Http\Controllers\LengthCircleController;
+use App\Http\Controllers\LengthCircle\LengthCircleController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;

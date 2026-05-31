@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\EinsteinFormula;
 
-use App\Http\Controllers\EinsteinFormula\EinsteinFormulaResult;
 use App\Http\Requests\EinsteinFormulaRequest;
 
 class EinsteinFormulaController

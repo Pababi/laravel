@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\LengthCircle;
 
 use App\Http\Requests\LengthCircleRequest;
 
 class LengthCircleController
 {
-    private function lengthCircle(int $radius): float
+    private function lengthCircle(int $radius): LengthCircleResult
     {
         $pi = 3.14;
         $lengthCircle = 2 * $pi * $radius;
-        return $lengthCircle;
+        return new LengthCircleResult($pi, $lengthCircle);
     }
 
     public function lengthCircleForm(): void
@@ -36,11 +36,10 @@ class LengthCircleController
     {
         $radius = $request['radius'];
         $lengthCircle = $this->lengthCircle($radius);
-        $pi = 3.14;
 
-        echo "π= " . $pi . '<br>';
+        echo "π= " . $lengthCircle->pi . '<br>';
         echo "R= " . $radius . '<br>';
-        echo "Длина окружности = " . $lengthCircle;
+        echo "Длина окружности = " . $lengthCircle->lengthCircle;
     }
 
 }
