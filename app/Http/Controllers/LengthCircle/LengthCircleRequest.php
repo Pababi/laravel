@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Controllers\LengthCircle;
 
 use Illuminate\Foundation\Http\FormRequest;
 

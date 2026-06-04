@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers\CircleArea;
 
-use App\Http\Requests\CircleAreaRequest;
-use Illuminate\Http\Request;
-
 class CircleAreaController
 {
     private function areaCircle(int $radius): AreaCircleResult

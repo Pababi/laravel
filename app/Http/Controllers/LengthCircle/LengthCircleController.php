@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\LengthCircle;
 
-use App\Http\Requests\LengthCircleRequest;
-
 class LengthCircleController
 {
     private function lengthCircle(int $radius): LengthCircleResult

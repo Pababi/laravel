@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\EinsteinFormula;
 
-use App\Http\Requests\EinsteinFormulaRequest;
-
 class EinsteinFormulaController
 {
     private function einsteinFormula(int $weight): EinsteinFormulaResult
