@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\WayFormula;
 
-use App\Http\Requests\WayRequest;
-
 class WayController
 {
     private function way(int $speed, int $time): WayResult

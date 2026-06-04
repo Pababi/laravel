@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\TriangleArea;
 
-use App\Http\Requests\TriangleAreaRequest;
-
 class TriangleAreaController
 {
     private function triangleArea(int $height, int $length): TriangleAreaResult
