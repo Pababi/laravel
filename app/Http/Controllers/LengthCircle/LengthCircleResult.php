@@ -6,6 +6,7 @@ readonly class LengthCircleResult
 {
     public function __construct(
         public float $pi,
+        public float $radius,
         public float $lengthCircle,
     ){}
 

@@ -8,7 +8,7 @@ class LengthCircleController
     {
         $pi = 3.14;
         $lengthCircle = 2 * $pi * $radius;
-        return new LengthCircleResult($pi, $lengthCircle);
+        return new LengthCircleResult($pi, $radius ,$lengthCircle);
     }
 
     public function lengthCircleForm(): void
@@ -36,7 +36,7 @@ class LengthCircleController
         $lengthCircle = $this->lengthCircle($radius);
 
         echo "π= " . $lengthCircle->pi . '<br>';
-        echo "R= " . $radius . '<br>';
+        echo "R= " . $lengthCircle->radius . '<br>';
         echo "Длина окружности = " . $lengthCircle->lengthCircle;
     }
 
