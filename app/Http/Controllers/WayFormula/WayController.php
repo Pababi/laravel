@@ -7,7 +7,7 @@ class WayController
     private function way(int $speed, int $time): WayResult
     {
         $way = $speed * $time;
-        return new WayResult($way);
+        return new WayResult($time, $speed, $way);
     }
 
     public function wayForm(): void
@@ -33,8 +33,8 @@ class WayController
         $time = $request['time'];
         $way = $this->way($time, $speed);
 
-        echo 'Скорость = ' . $speed . '<br>';
-        echo 'Длина основания = ' . $time . '<br>';
+        echo 'Скорость = ' . $way->speed . '<br>';
+        echo 'Время = ' . $way->time . '<br>';
         echo 'Путь = ' . $way->way . '<br>';
     }
 
