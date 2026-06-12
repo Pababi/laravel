@@ -7,7 +7,7 @@ readonly class PythagoreanTheoremResult
     public function __construct(
         public int $catheterA,
         public int $catheterB,
-        public int $hypotenuse
+        public float $hypotenuse
     ){}
 
 }
