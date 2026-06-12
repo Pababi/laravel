@@ -7,6 +7,7 @@ use App\Http\Controllers\LengthCircle\LengthCircleController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PythagoreanTheorem\PythagoreanTheoremController;
 use App\Http\Controllers\TriangleArea\TriangleAreaController;
 use App\Http\Controllers\WayFormula\WayController;
 use Illuminate\Support\Facades\Route;
@@ -37,3 +38,5 @@ Route::get('/length_circle', [LengthCircleController::class, 'lengthCircleForm']
 Route::post('/length_circle', [LengthCircleController::class, 'lengthCircleFormPost']);
 Route::get('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaForm']);
 Route::post('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaFormPost']);
+Route::get('/pythagorean', [PythagoreanTheoremController::class , 'pythagoreanForm']);
+Route::post('/pythagorean', [PythagoreanTheoremController::class, 'pythagoreanFormPost']);
