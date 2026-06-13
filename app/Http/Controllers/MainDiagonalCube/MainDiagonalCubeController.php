@@ -25,6 +25,12 @@ class MainDiagonalCubeController
         }
     }
 
-
+    public function mainDiagonalCubeFormPost(MainDiagonalCubeRequest $request): void
+    {
+        $length = $request['length'];
+        $diagonal = $this->mainDiagonalCube($length);
+        echo 'Длина = ' . $length . '<br>';
+        echo 'Главная диагональ куба = ' . $diagonal . '<br>';
+    }
 
 }

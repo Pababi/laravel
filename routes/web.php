@@ -42,3 +42,4 @@ Route::post('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaForm
 Route::get('/pythagorean', [PythagoreanTheoremController::class , 'pythagoreanForm']);
 Route::post('/pythagorean', [PythagoreanTheoremController::class, 'pythagoreanFormPost']);
 Route::get('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeForm']);
+Route::post('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeFormPost']);
