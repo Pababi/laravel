@@ -4,10 +4,10 @@ namespace App\Http\Controllers\MainDiagonalCube;
 
 class MainDiagonalCubeController
 {
-    private function mainDiagonalCube(int $length)
+    private function mainDiagonalCube(int $length): MainDiagonalCubeResult
     {
         $diagonal = $length * sqrt(3);
-        return $diagonal;
+        return new MainDiagonalCubeResult($length, $diagonal);
     }
 
     public function mainDiagonalCubeForm(): void
@@ -29,8 +29,8 @@ class MainDiagonalCubeController
     {
         $length = $request['length'];
         $diagonal = $this->mainDiagonalCube($length);
-        echo 'Длина = ' . $length . '<br>';
-        echo 'Главная диагональ куба = ' . $diagonal . '<br>';
+        echo 'Длина = ' . $diagonal->length . '<br>';
+        echo 'Главная диагональ куба = ' . $diagonal->diagonal . '<br>';
     }
 
 }
