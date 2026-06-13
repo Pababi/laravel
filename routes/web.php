@@ -4,6 +4,7 @@ use App\Http\Controllers\CircleArea\CircleAreaController;
 use App\Http\Controllers\EinsteinFormula\EinsteinFormulaController;
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\LengthCircle\LengthCircleController;
+use App\Http\Controllers\MainDiagonalCube\MainDiagonalCubeController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
@@ -40,3 +41,4 @@ Route::get('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaForm'
 Route::post('/einstein', [EinsteinFormulaController::class, 'einsteinFormulaFormPost']);
 Route::get('/pythagorean', [PythagoreanTheoremController::class , 'pythagoreanForm']);
 Route::post('/pythagorean', [PythagoreanTheoremController::class, 'pythagoreanFormPost']);
+Route::get('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeForm']);
