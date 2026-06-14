@@ -6,6 +6,7 @@ use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\LengthCircle\LengthCircleController;
 use App\Http\Controllers\MainDiagonalCube\MainDiagonalCubeController;
 use App\Http\Controllers\MathController;
+use App\Http\Controllers\MiddleLineTrapezoid\MiddleLineTrapezoidController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PythagoreanTheorem\PythagoreanTheoremController;
@@ -43,3 +44,4 @@ Route::get('/pythagorean', [PythagoreanTheoremController::class , 'pythagoreanFo
 Route::post('/pythagorean', [PythagoreanTheoremController::class, 'pythagoreanFormPost']);
 Route::get('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeForm']);
 Route::post('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeFormPost']);
+Route::get('/middle', [MiddleLineTrapezoidController::class , 'middleLineTrapezoidForm']);
