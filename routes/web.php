@@ -48,3 +48,4 @@ Route::post('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeFo
 Route::get('/middle', [MiddleLineTrapezoidController::class , 'middleLineTrapezoidForm']);
 Route::post('/middle', [MiddleLineTrapezoidController::class, 'middleLineTrapezoidFormPost']);
 Route::get('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaForm']);
+Route::post('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaFormPost']);

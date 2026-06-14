@@ -29,4 +29,16 @@ class TrapezoidAreaController
 
     }
 
+    public function trapezoidAreaFormPost(TrapezoidAreaRequest $request): void
+    {
+        $lengthA = $request['lengthA'];
+        $lengthB = $request['lengthB'];
+        $height = $request['height'];
+        $trapezoidArea = $this->trapezoidArea($lengthA, $lengthB, $height);
+        echo 'Длина A= '. $lengthA . '<br>';
+        echo 'Длина B= '. $lengthB . '<br>';
+        echo 'Высота = '. $height . '<br>';
+        echo 'Площадь трапеции = '. $trapezoidArea .'<br>';
+    }
+
 }
