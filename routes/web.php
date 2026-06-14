@@ -10,6 +10,7 @@ use App\Http\Controllers\MiddleLineTrapezoid\MiddleLineTrapezoidController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PythagoreanTheorem\PythagoreanTheoremController;
+use App\Http\Controllers\TrapezoidArea\TrapezoidAreaController;
 use App\Http\Controllers\TriangleArea\TriangleAreaController;
 use App\Http\Controllers\WayFormula\WayController;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +47,4 @@ Route::get('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeFor
 Route::post('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeFormPost']);
 Route::get('/middle', [MiddleLineTrapezoidController::class , 'middleLineTrapezoidForm']);
 Route::post('/middle', [MiddleLineTrapezoidController::class, 'middleLineTrapezoidFormPost']);
+Route::get('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaForm']);
