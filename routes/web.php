@@ -10,6 +10,7 @@ use App\Http\Controllers\MiddleLineTrapezoid\MiddleLineTrapezoidController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PythagoreanTheorem\PythagoreanTheoremController;
+use App\Http\Controllers\SphereArea\SphereAreaController;
 use App\Http\Controllers\TrapezoidArea\TrapezoidAreaController;
 use App\Http\Controllers\TriangleArea\TriangleAreaController;
 use App\Http\Controllers\WayFormula\WayController;
@@ -49,3 +50,4 @@ Route::get('/middle', [MiddleLineTrapezoidController::class , 'middleLineTrapezo
 Route::post('/middle', [MiddleLineTrapezoidController::class, 'middleLineTrapezoidFormPost']);
 Route::get('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaForm']);
 Route::post('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaFormPost']);
+Route::get('/sphere', [SphereAreaController::class, 'sphereAreaForm']);
