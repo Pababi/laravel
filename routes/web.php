@@ -45,3 +45,4 @@ Route::post('/pythagorean', [PythagoreanTheoremController::class, 'pythagoreanFo
 Route::get('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeForm']);
 Route::post('/diagonal', [MainDiagonalCubeController::class, 'mainDiagonalCubeFormPost']);
 Route::get('/middle', [MiddleLineTrapezoidController::class , 'middleLineTrapezoidForm']);
+Route::post('/middle', [MiddleLineTrapezoidController::class, 'middleLineTrapezoidFormPost']);

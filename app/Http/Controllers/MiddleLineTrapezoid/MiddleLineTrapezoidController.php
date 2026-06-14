@@ -12,12 +12,13 @@ class MiddleLineTrapezoidController
 
     public function middleLineTrapezoidForm(): void
     {
-        $html = '<form method="POST" action="/middle">
-        <input type="text" name="lengthA" placeholder="Длина A">
-        <input type="text" name="lengthB" placeholder="Длина B">
-        <input type="submit">';
-        echo $html;
+        $html = '<form action="/pythagorean" method="POST">
+     <input type="text" name="lengthA" placeholder="Длина А">
+     <input type="text" name="lengthB" placeholder="Длина B">
+     <input type="submit">
+     </form>';
 
+        echo $html;
         $errors = session('errors', collect());
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
@@ -25,5 +26,16 @@ class MiddleLineTrapezoidController
             }
         }
 
+    }
+
+    public function middleLineTrapezoidFormPost(MiddleLineTrapezoidRequst $request): void
+    {
+        $lengthA = $request['lengthA'];
+        $lengthB = $request['lengthB'];
+        $middleLength = $this->middleLineTrapezoid($lengthA, $lengthB);
+
+        echo 'Длина A= ' . $lengthA . '<br>';
+        echo 'Длина B= ' . $lengthB . '<br>';
+        echo 'Длина средней линии ' . $middleLength . '<br>';
     }
 }
