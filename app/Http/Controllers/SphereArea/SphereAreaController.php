@@ -4,10 +4,10 @@ namespace App\Http\Controllers\SphereArea;
 
 class SphereAreaController
 {
-    private function sphereArea( int $radius)
+    private function sphereArea( int $radius): SphereAreaResult
     {
         $sphereArea = 4 * pi() * $radius * $radius;
-        return $sphereArea;
+        return new SphereAreaResult($radius, $sphereArea);
     }
 
     public function sphereAreaForm(): void
@@ -31,9 +31,9 @@ class SphereAreaController
     {
         $radius = $request['radius'];
         $sphereArea = $this->sphereArea($radius);
-        echo 'Радиус = '. $radius . '<br>';
+        echo 'Радиус = '. $sphereArea->radius . '<br>';
         echo 'π= '. pi() . '<br>';
-        echo 'Площадь сферы = ' . $sphereArea . '<br>';
+        echo 'Площадь сферы = ' . $sphereArea->sphereArea . '<br>';
     }
 
 }
