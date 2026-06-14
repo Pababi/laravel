@@ -4,10 +4,10 @@ namespace App\Http\Controllers\TrapezoidArea;
 
 class TrapezoidAreaController
 {
-    private function trapezoidArea(int $lengthA, int $lengthB, int $height)
+    private function trapezoidArea(int $lengthA, int $lengthB, int $height): TrapezoidAreaResult
     {
         $trapezoidArea = ($lengthA + $lengthB)/2 * $height;
-        return $trapezoidArea;
+        return new TrapezoidAreaResult($lengthA, $lengthB, $height, $trapezoidArea);
     }
 
     public function trapezoidAreaForm(): void
@@ -35,10 +35,10 @@ class TrapezoidAreaController
         $lengthB = $request['lengthB'];
         $height = $request['height'];
         $trapezoidArea = $this->trapezoidArea($lengthA, $lengthB, $height);
-        echo 'Длина A= '. $lengthA . '<br>';
-        echo 'Длина B= '. $lengthB . '<br>';
-        echo 'Высота = '. $height . '<br>';
-        echo 'Площадь трапеции = '. $trapezoidArea .'<br>';
+        echo 'Длина A= '. $trapezoidArea->lengthA . '<br>';
+        echo 'Длина B= '. $trapezoidArea->lengthB . '<br>';
+        echo 'Высота = '. $trapezoidArea->height . '<br>';
+        echo 'Площадь трапеции = '. $trapezoidArea->trapezoidArea .'<br>';
     }
 
 }
