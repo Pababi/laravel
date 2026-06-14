@@ -51,3 +51,4 @@ Route::post('/middle', [MiddleLineTrapezoidController::class, 'middleLineTrapezo
 Route::get('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaForm']);
 Route::post('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaFormPost']);
 Route::get('/sphere', [SphereAreaController::class, 'sphereAreaForm']);
+Route::post('/sphere', [SphereAreaController::class, 'sphereAreaFormPost']);

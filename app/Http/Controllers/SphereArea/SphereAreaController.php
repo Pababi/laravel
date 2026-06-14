@@ -10,7 +10,7 @@ class SphereAreaController
         return $sphereArea;
     }
 
-    public function sphereAreaForm()
+    public function sphereAreaForm(): void
     {
         $html = '<form action="/sphere" method="POST">
      <input type="text" name="radius" placeholder="Радиус">
@@ -25,6 +25,15 @@ class SphereAreaController
             }
         }
 
+    }
+
+    public function sphereAreaFormPost(SphereAreaRequest $request)
+    {
+        $radius = $request['radius'];
+        $sphereArea = $this->sphereArea($radius);
+        echo 'Радиус = '. $radius . '<br>';
+        echo 'π= '. pi() . '<br>';
+        echo 'Площадь сферы = ' . $sphereArea . '<br>';
     }
 
 }
