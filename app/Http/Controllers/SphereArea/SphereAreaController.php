@@ -27,7 +27,7 @@ class SphereAreaController
 
     }
 
-    public function sphereAreaFormPost(SphereAreaRequest $request)
+    public function sphereAreaFormPost(SphereAreaRequest $request):void
     {
         $radius = $request['radius'];
         $sphereArea = $this->sphereArea($radius);
