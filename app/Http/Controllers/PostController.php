@@ -9,7 +9,7 @@ class PostController
     public function index():string
     {
         $post = new Post();
-$post->title = 'Заголовок';
+$post->title = 'Заголовок 3';
 $post->description = 'Описание';
 $post->rating = 'Хороший';
 $post->save();
@@ -18,7 +18,10 @@ $post->save();
 
     public function show(string $id): string
     {
-        return "Это страница просмотра поста ". $id;
+        $post = Post::find($id);
+        $post->title = $post->title . 'Аппельсин.';
+        $post->save();
+        return "Это страница просмотра поста ". $post->title;
     }
 
 }
