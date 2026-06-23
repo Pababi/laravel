@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\NewPost;
 
-use App\Http\Requests\NewPostRequest;
 use App\Models\Post;
 
 class NewPostController
@@ -23,5 +22,13 @@ class NewPostController
             }
         }
     }
-
+    public function postFromPost(NewPostRequest $request): void
+    {
+        $post = new Post();
+        $post->title = $request['title'];
+        $post->description = $request['description'];
+        $post->rating = $request['rating'];
+        $post->save();
+        echo '<span style="color:green"> Пост успешно добавлен </span>';
+    }
 }

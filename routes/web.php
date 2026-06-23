@@ -7,7 +7,7 @@ use App\Http\Controllers\LengthCircle\LengthCircleController;
 use App\Http\Controllers\MainDiagonalCube\MainDiagonalCubeController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\MiddleLineTrapezoid\MiddleLineTrapezoidController;
-use App\Http\Controllers\NewPostController;
+use App\Http\Controllers\NewPost\NewPostController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PythagoreanTheorem\PythagoreanTheoremController;
@@ -54,4 +54,4 @@ Route::post('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaFormPos
 Route::get('/sphere', [SphereAreaController::class, 'sphereAreaForm']);
 Route::post('/sphere', [SphereAreaController::class, 'sphereAreaFormPost']);
 Route::get('/new_post', [NewPostController::class, 'postForm']);
-
+Route::post('/new_post', [NewPostController::class, 'postFromPost']);
