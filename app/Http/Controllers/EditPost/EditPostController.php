@@ -16,6 +16,12 @@ class EditPostController
         <input type="text" name="rating" placeholder="Изменить оценку"><br>
         <input type="submit"><br>';
         echo $html;
+        foreach (Post::all() as $post) {
+            echo 'id: ' . $post->id. '<br>';
+            echo 'Заголовки: ' .$post->title . '<br>';
+            echo 'Описания: ' .$post->description . '<br>';
+            echo 'Рейтинги: ' .$post->rating . '<br>';
+        }
 
         $errors = session('errors', collect());
         if ($errors && $errors->any()) {
