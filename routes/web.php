@@ -57,3 +57,4 @@ Route::post('/sphere', [SphereAreaController::class, 'sphereAreaFormPost']);
 Route::get('/new_post', [NewPostController::class, 'newPostForm']);
 Route::post('/new_post', [NewPostController::class, 'newPostFromPost']);
 Route::get('/edit_post', [EditPostController::class, 'editPostForm']);
+Route::post('/edit_post', [EditPostController::class, 'editPostFormPost']);
