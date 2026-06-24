@@ -54,6 +54,6 @@ Route::get('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaForm']);
 Route::post('/trapezoid', [TrapezoidAreaController::class, 'trapezoidAreaFormPost']);
 Route::get('/sphere', [SphereAreaController::class, 'sphereAreaForm']);
 Route::post('/sphere', [SphereAreaController::class, 'sphereAreaFormPost']);
-Route::get('/new_post', [NewPostController::class, 'postForm']);
-Route::post('/new_post', [NewPostController::class, 'postFromPost']);
+Route::get('/new_post', [NewPostController::class, 'newPostForm']);
+Route::post('/new_post', [NewPostController::class, 'newPostFromPost']);
 Route::get('/edit_post', [EditPostController::class, 'editPostForm']);

@@ -6,7 +6,7 @@ use App\Models\Post;
 
 class NewPostController
 {
-    public function postForm(): void
+    public function newPostForm(): void
     {
         $html = '<form method="POST" action="/new_post">
 <input type="text" name="title" placeholder="Заголовок">
@@ -22,7 +22,7 @@ class NewPostController
             }
         }
     }
-    public function postFromPost(NewPostRequest $request): void
+    public function newPostFromPost(NewPostRequest $request): void
     {
         $post = new Post();
         $post->title = $request['title'];
