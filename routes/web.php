@@ -1,6 +1,7 @@
 <?php
 namespace App\Enums;
 use App\Http\Controllers\CircleArea\CircleAreaController;
+use App\Http\Controllers\EditPost\EditPostController;
 use App\Http\Controllers\EinsteinFormula\EinsteinFormulaController;
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\LengthCircle\LengthCircleController;
@@ -55,3 +56,4 @@ Route::get('/sphere', [SphereAreaController::class, 'sphereAreaForm']);
 Route::post('/sphere', [SphereAreaController::class, 'sphereAreaFormPost']);
 Route::get('/new_post', [NewPostController::class, 'postForm']);
 Route::post('/new_post', [NewPostController::class, 'postFromPost']);
+Route::get('/edit_post', [EditPostController::class, 'editPostForm']);
