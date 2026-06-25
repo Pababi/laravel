@@ -34,13 +34,11 @@ class EditPostController
     public function editPostFormPost(EditPostRequest $request): void
     {
         $post = Post::find($request['id']);
+        $post->updatePost($request['title'], $request['description']);
+        $post->save();
         echo 'Заголовок(до):'. $post->title . '<br>';
         echo 'Описание(до):'. $post->description . '<br>';
         echo 'Рейтинг(до):'. $post->rating . '<br>';
-        $post->title = $request['title'];
-        $post->description = $request['description'];
-        $post->rating = $request['rating'];
-        $post->save();
         echo '<span style="color:green">Пост успешно изменен</span>';
 
     }

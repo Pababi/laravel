@@ -15,6 +15,7 @@ class NewPostController
 <input type="submit">
 </form>';
         echo $html;
+        echo Post::testText();
         $errors = session('errors', collect());
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
@@ -24,10 +25,11 @@ class NewPostController
     }
     public function newPostFromPost(NewPostRequest $request): void
     {
-        $post = new Post();
-        $post->title = $request['title'];
-        $post->description = $request['description'];
-        $post->rating = $request['rating'];
+//        $post = new Post();
+//        $post->title = $request['title'];
+//        $post->description = $request['description'];
+//        $post->rating = $request['rating'];
+        $post = Post::factoryCreate($request['title'], $request['description']);
         $post->save();
         echo '<span style="color:green"> Пост успешно добавлен </span>';
     }
