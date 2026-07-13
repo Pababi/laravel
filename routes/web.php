@@ -60,3 +60,4 @@ Route::post('/new_post', [NewPostController::class, 'newPostFromPost']);
 Route::get('/edit_post', [EditPostController::class, 'editPostForm']);
 Route::post('/edit_post', [EditPostController::class, 'editPostFormPost']);
 Route::get('/comment', [CommentController::class, 'newComment']);
+Route::post('/comment' , [CommentController::class, 'postCommentForm']);

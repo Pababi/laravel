@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\NewComment;
 
 use App\Models\Comment;
-use App\Models\Post;
 
 class CommentController
 {
@@ -12,8 +11,8 @@ class CommentController
         $html = '<form method="post" action="/comment">
         <input type="text" name="name" placeholder="Имя">
         <input type="text" name="email" placeholder="Эл. почта">
-        <input type="text" name="topic" placeholder="тема">
-        <input type="text" name="text" placeholder="Текст">
+        <input type="text" name="topic" placeholder="Тема">
+        <input type="text" name="text" placeholder="Комментарий">
         <input type="submit">
         </form>';
 
@@ -24,5 +23,15 @@ class CommentController
                 echo '<span style="color: red;">' . $message . '</span>' . '<br>';
             }
         }
+    }
+    public function postCommentForm(CommentRequest $request): void
+    {
+        $comment = new Comment();
+        $comment ->name = $request['name'];
+        $comment ->email = $request['email'];
+        $comment ->topic = $request['topic'];
+        $comment ->text = $request['text'];
+        $comment ->save();
+        echo '<span style="color:green"> Пост успешно добавлен </span>';
     }
 }
