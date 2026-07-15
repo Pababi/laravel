@@ -4,7 +4,7 @@ namespace App\Http\Controllers\NewComment;
 
 use App\Models\Comment;
 
-class CommentController
+class NewCommentController
 {
     public function newComment(): void
     {
@@ -24,13 +24,9 @@ class CommentController
             }
         }
     }
-    public function postCommentForm(CommentRequest $request): void
+    public function postCommentForm(NewCommentRequest $request): void
     {
-        $comment = new Comment();
-        $comment ->name = $request['name'];
-        $comment ->email = $request['email'];
-        $comment ->topic = $request['topic'];
-        $comment ->text = $request['text'];
+        $comment = Comment::createComment($request['name'], $request['email'], $request['topic'], $request['text']);
         $comment ->save();
         echo '<span style="color:green"> Пост успешно добавлен </span>';
     }
