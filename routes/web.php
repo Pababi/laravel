@@ -1,6 +1,7 @@
 <?php
 namespace App\Enums;
 use App\Http\Controllers\CircleArea\CircleAreaController;
+use App\Http\Controllers\EditComment\EditCommentController;
 use App\Http\Controllers\EditPost\EditPostController;
 use App\Http\Controllers\EinsteinFormula\EinsteinFormulaController;
 use App\Http\Controllers\GreetingController;
@@ -8,7 +9,7 @@ use App\Http\Controllers\LengthCircle\LengthCircleController;
 use App\Http\Controllers\MainDiagonalCube\MainDiagonalCubeController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\MiddleLineTrapezoid\MiddleLineTrapezoidController;
-use App\Http\Controllers\NewComment\CommentController;
+use App\Http\Controllers\NewComment\NewCommentController;
 use App\Http\Controllers\NewPost\NewPostController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
@@ -59,5 +60,6 @@ Route::get('/new_post', [NewPostController::class, 'newPostForm']);
 Route::post('/new_post', [NewPostController::class, 'newPostFromPost']);
 Route::get('/edit_post', [EditPostController::class, 'editPostForm']);
 Route::post('/edit_post', [EditPostController::class, 'editPostFormPost']);
-Route::get('/comment', [CommentController::class, 'newComment']);
-Route::post('/comment' , [CommentController::class, 'postCommentForm']);
+Route::get('/comment', [NewCommentController::class, 'newComment']);
+Route::post('/comment' , [NewCommentController::class, 'postCommentForm']);
+Route::get('/editcomment', [EditCommentController::class, 'editCommentForm']);
