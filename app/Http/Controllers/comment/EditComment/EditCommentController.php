@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\EditComment;
+namespace App\Http\Controllers\comment\EditComment;
 
 use App\Models\Comment;
 
