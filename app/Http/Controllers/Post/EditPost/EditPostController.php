@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\EditPost;
+namespace App\Http\Controllers\Post\EditPost;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class EditPostController
 {

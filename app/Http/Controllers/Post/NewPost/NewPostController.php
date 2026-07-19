@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\NewPost;
+namespace App\Http\Controllers\Post\NewPost;
 
 use App\Models\Post;
 
