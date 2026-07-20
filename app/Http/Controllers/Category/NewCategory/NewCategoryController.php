@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Category\NewCategory;
 
+use App\Models\category;
+
 class NewCategoryController
 {
-    public function newCategoryForm()
+    public function newCategoryForm() : void
     {
         $html = '<form method="post" action="/category">
         <input type="text" name="title" placeholder="Название">
@@ -20,5 +22,12 @@ class NewCategoryController
                 echo '<span style="color: red;">' . $message . '</span><br>';
             }
         }
+    }
+
+    public function newCategoryFormPost(NewCategoryRequest $request): void
+    {
+        $category = Category::createCategory($request['title'],$request['topic'], $request['rating'], $request['description']);
+        $category -> save();
+        echo '<span style="color:green"> Пост успешно добавлен </span>';
     }
 }
