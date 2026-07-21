@@ -1,5 +1,6 @@
 <?php
 namespace App\Enums;
+use App\Http\Controllers\Category\EditCategory\EditCategoryController;
 use App\Http\Controllers\Category\NewCategory\NewCategoryController;
 use App\Http\Controllers\CircleArea\CircleAreaController;
 use App\Http\Controllers\comment\EditComment\EditCommentController;
@@ -67,3 +68,4 @@ Route::get('/editcomment', [EditCommentController::class, 'editCommentForm']);
 Route::post('/editcomment', [EditCommentController::class, 'editCommentFormPost']);
 Route::get('/category', [NewCategoryController::class, 'newCategoryForm']);
 Route::post('/category', [NewCategoryController::class, 'newCategoryFormPost']);
+Route::get('/editcategory', [EditCategoryController::class, 'editCategoryForm']);
