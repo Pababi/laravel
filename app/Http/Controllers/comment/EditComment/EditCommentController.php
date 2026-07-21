@@ -15,6 +15,12 @@ class EditCommentController
         <input type="text" name="text" placeholder="Изменить комментарий">
         <input type="submit"><br>';
         echo $html;
+        foreach (Comment::all() as $comment) {
+            echo 'id: ' . $comment->id. '<br>';
+            echo 'Имя: ' . $comment->name. '<br>';
+            echo 'Тема: ' . $comment->topic. '<br>';
+            echo 'text: ' . $comment->text. '<br>';
+        }
 
         $errors = session('errors', collect());
         if ($errors && $errors->any()) {
