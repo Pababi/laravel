@@ -69,3 +69,4 @@ Route::post('/editcomment', [EditCommentController::class, 'editCommentFormPost'
 Route::get('/category', [NewCategoryController::class, 'newCategoryForm']);
 Route::post('/category', [NewCategoryController::class, 'newCategoryFormPost']);
 Route::get('/editcategory', [EditCategoryController::class, 'editCategoryForm']);
+Route::post('/editcategory', [EditCategoryController::class, 'editCategoryFormPost']);

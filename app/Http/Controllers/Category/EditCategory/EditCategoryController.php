@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Category\EditCategory;
 
+
+use App\Models\Categhory;
+use App\Models\Category;
+
 class EditCategoryController
 {
     public function editCategoryForm(): void
@@ -22,5 +26,12 @@ class EditCategoryController
         }
     }
 
-
+    public function editCategoryFormPost(EditCategoryRequest $request)
+    {
+        $category = Category::find($request['id']);
+        $category-> updateCategoryTitle($request['title']);
+        $category->updateCategoryTopicDescription($request['topic'], $request['description']);
+        $category->save();
+        echo '<span style="color:green">Пост успешно изменен</span>';
+    }
 }

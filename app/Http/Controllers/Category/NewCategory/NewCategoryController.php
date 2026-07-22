@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Category\NewCategory;
 
-use App\Models\category;
+use App\Models\Category;
 
 class NewCategoryController
 {
