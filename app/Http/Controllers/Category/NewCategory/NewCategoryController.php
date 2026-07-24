@@ -26,8 +26,8 @@ class NewCategoryController
 
     public function newCategoryFormPost(NewCategoryRequest $request): void
     {
-        $category = Category::createCategory($request['title'],$request['topic'], $request['rating'], $request['description']);
-        $category -> save();
+        $category = Category::createCategory($request['title'],$request['topic'], $request['description']);
+        $category->save();
         echo '<span style="color:green"> Пост успешно добавлен </span>';
     }
 }

@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public static function createCategory(string $title, string $topic,int $rating, string $description): self
+    public static function createCategory(string $title, string $topic,string $description): self
     {
         $category = new self;
         $category -> title = $title;
         $category -> topic = $topic;
-        $category -> rating = $rating;
+        $category -> rating = 0;
         $category -> description = $description;
         return $category;
     }
