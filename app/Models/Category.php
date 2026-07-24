@@ -16,15 +16,10 @@ class Category extends Model
         return $category;
     }
 
-    public function updateCategoryTitle(string $title) : void
+    public function updateCategory(string $title, string $topic, string $description) : void
     {
-        $this -> title = $title. ' -Изменено';
-        $this -> rating = $this->rating +1;
-    }
-
-    public function updateCategoryTopicDescription(string $topic, string $description) : void
-    {
-        $this -> topic = $topic . ' -Изменено';
-        $this -> description = $description . ' -Изменено';
+        $this -> title = $title;
+        $this -> topic = $topic;
+        $this -> description = $description;
     }
 }

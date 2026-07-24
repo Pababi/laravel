@@ -29,8 +29,7 @@ class EditCategoryController
     public function editCategoryFormPost(EditCategoryRequest $request)
     {
         $category = Category::find($request['id']);
-        $category-> updateCategoryTitle($request['title']);
-        $category->updateCategoryTopicDescription($request['topic'], $request['description']);
+        $category->updateCategory($request['title'], $request['topic'], $request['description']);
         $category->save();
         echo '<span style="color:green">Пост успешно изменен</span>';
     }
