@@ -33,9 +33,7 @@ class EditCommentController
     public function editCommentFormPost(EditCommentRequest $request): void
     {
         $comment = comment::find($request['id']);
-        $comment->updateName($request['name']);
-        $comment->updateTopic($request['topic']);
-        $comment->updateComment($request['text']);
+        $comment->updateComment($request['name'], $request['text'], $request['topic']);
         $comment->save();
         echo '<span style="color:green">Пост успешно изменен</span>';
 

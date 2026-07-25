@@ -15,19 +15,10 @@ class Comment extends Model
         $comment -> text = $text;
         return $comment;
     }
-    public function updateName(string $name): void
+    public function updateComment(string $name, string $text, string $topic): void
     {
-        $this->name = $name . '-Изменено';
-    }
-
-    public function updateTopic(string $topic): void
-    {
-        $this->topic = $topic . '-Изменено';
-    }
-
-    public function updateComment (string $text): void
-    {
-
-        $this->text = $text . '-Изменено';
+        $this->name = $name;
+        $this->text = $text;
+        $this->topic = $topic;
     }
 }
