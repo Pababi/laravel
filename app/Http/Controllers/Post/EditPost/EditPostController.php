@@ -8,6 +8,9 @@ class EditPostController
 {
     public function editPostForm(): void
     {
+//        Post::first()->Comments->toArray(); // пример получения связанных моделей
+//        \App\Models\Comment::first()->post->toArray() // Пример получения связанной модели
+
         $html = '<form method="POST" action="/edit_post">
         <input type="text" name="id" placeholder="id из базы данных"><br>
         <input type="text" name="title" placeholder="Изменить заголовок"><br>
