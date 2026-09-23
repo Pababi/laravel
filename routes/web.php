@@ -74,3 +74,4 @@ Route::get('/editcategory', [EditCategoryController::class, 'editCategoryForm'])
 Route::post('/editcategory', [EditCategoryController::class, 'editCategoryFormPost']);
 Route::get('/list-post', [ListPostController::class, 'listPostPage']);
 Route::get('/read-post', [ReadPostController::class, 'readPostForm']);
+Route::post('/read-post', [ReadPostController::class, 'readPostFormPost']);
