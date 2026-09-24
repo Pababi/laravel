@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Post\DeletePost;
 
+use App\Models\Post;
+
 class DeletePostController
 {
     public function deletePostForm(): void
@@ -18,6 +20,13 @@ class DeletePostController
                 echo '<span style="color: red">' . $message . '</span><br>';
             }
         }
+    }
+
+    public function deletePostFormPost(DeletePostRequest $request): void
+    {
+        $post = Post::find($request['id']);
+        $post->delete();
+        echo '<label style="color: green">Пост удален</label>';
     }
 
 }
