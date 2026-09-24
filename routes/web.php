@@ -12,6 +12,7 @@ use App\Http\Controllers\MainDiagonalCube\MainDiagonalCubeController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\MiddleLineTrapezoid\MiddleLineTrapezoidController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Post\DeletePost\DeletePostController;
 use App\Http\Controllers\Post\EditPost\EditPostController;
 use App\Http\Controllers\Post\ListPost\ListPostController;
 use App\Http\Controllers\Post\NewPost\NewPostController;
@@ -75,3 +76,4 @@ Route::post('/editcategory', [EditCategoryController::class, 'editCategoryFormPo
 Route::get('/list-post', [ListPostController::class, 'listPostPage']);
 Route::get('/read-post', [ReadPostController::class, 'readPostForm']);
 Route::post('/read-post', [ReadPostController::class, 'readPostFormPost']);
+Route::get('/post_delete', [DeletePostController::class, 'deletePostForm']);
