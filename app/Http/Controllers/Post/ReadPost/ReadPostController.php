@@ -10,12 +10,12 @@ class ReadPostController
     {
         $html= '<form method="POST" action="/read-post">
         <input type="text" placeholder="id из базы данных" name="id">
-        <input type="submit">';
+        <input type="submit"><br>';
         echo $html;
         $errors = session('errors', collect());
         if ($errors && $errors->any()) {
             foreach ($errors->all() as $message) {
-                echo '<span style="color: red">' . $message . '</span><br>';
+                echo '<span style="color: red">' . $message . '</span> <br>';
             }
         }
 
@@ -23,7 +23,7 @@ class ReadPostController
 
     public function readPostFormPost(ReadPostRequest $request): void
     {
-        $post = Post::find($request->id);
+        $post = Post::find($request['id']);
         echo 'id: ' . $post->id . '<br>';
         echo 'Заголовок(до):'. $post->title . '<br>';
         echo 'Описание(до):'. $post->description . '<br>';
