@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Post\CommentForPost;
 
+use App\Models\Comment;
+use App\Models\Post;
+
 class CommentForPostController
 {
     public function commentForPostForm(): void
@@ -21,6 +24,13 @@ class CommentForPostController
                 echo '<span style="color:red;">' . $error . '</span><br>';
             }
         }
+    }
+
+    public function commentForPostFormPost(CommentForPostRequest $request): void
+    {
+        $comment = Comment::createComment($request['name'], $request['email'], $request['topic'], $request['text']);
+        $post = Post::find($request['id']);
+        $post->comments()->save($comment);
     }
 
 }

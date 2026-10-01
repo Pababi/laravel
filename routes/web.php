@@ -80,3 +80,4 @@ Route::post('/read-post', [ReadPostController::class, 'readPostFormPost']);
 Route::get('/post_delete', [DeletePostController::class, 'deletePostForm']);
 Route::post('/post_delete', [DeletePostController::class, 'deletePostFormPost']);
 Route::get('/commentforpost', [CommentForPostController::class, 'commentForPostForm']);
+Route::post('/commentforpost', [CommentForPostController::class, 'commentForPostFormPost']);
