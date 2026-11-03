@@ -84,3 +84,4 @@ Route::get('/commentforpost', [CommentForPostController::class, 'commentForPostF
 Route::post('/commentforpost', [CommentForPostController::class, 'commentForPostFormPost']);
 Route::get('/list_comment', [ListCommentOnPostController::class, 'listCommentOnPost']);
 Route::post('/read-post-delete', [ReadPostController::class , 'delete']);
+Route::post('/list-post-delete', [ListPostController::class , 'deletePost']);

@@ -48,6 +48,7 @@ class ReadPostController
     {
         $posts = Post::find($request['id']);
         $posts->delete();
+        echo '<span style="color: green">Пост успешно удален</span>';
     }
 
 }
