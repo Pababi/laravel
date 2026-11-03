@@ -83,3 +83,4 @@ Route::post('/post_delete', [DeletePostController::class, 'deletePostFormPost'])
 Route::get('/commentforpost', [CommentForPostController::class, 'commentForPostForm']);
 Route::post('/commentforpost', [CommentForPostController::class, 'commentForPostFormPost']);
 Route::get('/list_comment', [ListCommentOnPostController::class, 'listCommentOnPost']);
+Route::post('/read-post-delete', [ReadPostController::class , 'delete']);

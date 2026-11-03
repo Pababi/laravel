@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Post\ReadPost;
 
 use App\Models\Comment;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class ReadPostController
 {
@@ -30,6 +31,9 @@ class ReadPostController
         echo 'Заголовок(до): ' . $posts->title . '<br>';
         echo 'Описание(до): ' . $posts->description . '<br>';
         echo 'Рейтинг(до): ' . $posts->rating . '<br>';
+        echo '<form method="POST" action="/read-post-delete">
+<input type="hidden" name="id" value="' . $posts->id . '">
+<input type="submit" value="Удалить"></form>';
         echo '<h4>Комментарий к посту</h4>';
         foreach ($posts->comments as $comment) {
             echo 'Имя комментатора: ' . $comment->name . '<br>';
@@ -38,6 +42,12 @@ class ReadPostController
             echo 'Комментарий:'. $comment->text . '<br>';
         }
 
+    }
+
+    public function delete(Request $request): void
+    {
+        $posts = Post::find($request['id']);
+        $posts->delete();
     }
 
 }
