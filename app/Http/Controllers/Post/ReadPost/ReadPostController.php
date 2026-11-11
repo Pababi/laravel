@@ -34,12 +34,13 @@ class ReadPostController
         echo '<form method="POST" action="/read-post-delete">
 <input type="hidden" name="id" value="' . $posts->id . '">
 <input type="submit" value="Удалить"></form>';
-        echo '<h4>Комментарий к посту</h4>';
+        if ($posts->comments->count() > 0 ) {
+            echo '<h4>Комментарий к посту</h4>';
         foreach ($posts->comments as $comment) {
             echo 'Имя комментатора: ' . $comment->name . '<br>';
             echo 'Эл.почта: '. $comment->email . '<br>';
             echo 'Тема: ' . $comment->topic . '<br>';
-            echo 'Комментарий:'. $comment->text . '<br>';
+            echo 'Комментарий:'. $comment->text . '<br>';}
         }
 
     }
