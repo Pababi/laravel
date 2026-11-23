@@ -7,6 +7,7 @@ use App\Http\Controllers\comment\EditComment\EditCommentController;
 use App\Http\Controllers\comment\ListCommentOnPost\ListCommentOnPostController;
 use App\Http\Controllers\comment\NewComment\NewCommentController;
 use App\Http\Controllers\EinsteinFormula\EinsteinFormulaController;
+use App\Http\Controllers\equation\EquationController;
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\LengthCircle\LengthCircleController;
 use App\Http\Controllers\MainDiagonalCube\MainDiagonalCubeController;
@@ -85,3 +86,4 @@ Route::post('/commentforpost', [CommentForPostController::class, 'commentForPost
 Route::get('/list_comment', [ListCommentOnPostController::class, 'listCommentOnPost']);
 Route::post('/read-post-delete', [ReadPostController::class , 'delete']);
 Route::post('/list-post-delete', [ListPostController::class , 'deletePost']);
+Route::get('/equation', [EquationController::class, 'equationForm']);
