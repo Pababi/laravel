@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('equations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('ValueA');
             $table->integer('ValueB');
             $table->integer('ValueC');
+            $table->integer('discriminant');
+            $table->string('answer');
+            $table->timestamps();
         });
     }
 

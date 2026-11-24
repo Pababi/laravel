@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\equation;
 
+use App\Models\Equation;
 use Illuminate\Http\Request;
 
 class EquationController
@@ -31,7 +32,6 @@ class EquationController
     private function equationCalculation(int $a, int $b, int $c)
     {
         $discriminant = $this->discriminant($a, $b, $c);
-        echo 'Дискриминант = ' . $discriminant . '<br>';
         if ($discriminant < 0)
         {
             $answer = 'Дискриминант меньше 0, корней нет <br>';
@@ -53,9 +53,13 @@ class EquationController
         $a = $request['a'];
         $b = $request['b'];
         $c = $request['c'];
-        $equation = $this->equationCalculation($a, $b, $c);
-        echo $equation;
+        $discriminant = $this->discriminant($a, $b, $c);
+        $answer = $this->equationCalculation($a, $b, $c);
+        echo 'Дискриминант = ' . $discriminant . '<br>';
+        echo $answer;
         echo "Данное решение получено с данных a = $a, b = $b, c = $c";
+        $base = Equation::createDecision($a, $b, $c, $discriminant, $answer);
+        $base->save();
 
     }
 
