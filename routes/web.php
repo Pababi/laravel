@@ -87,3 +87,4 @@ Route::get('/list_comment', [ListCommentOnPostController::class, 'listCommentOnP
 Route::post('/read-post-delete', [ReadPostController::class , 'delete']);
 Route::post('/list-post-delete', [ListPostController::class , 'deletePost']);
 Route::get('/equation', [EquationController::class, 'equationForm']);
+Route::post('/equation', [EquationController::class, 'equationFormPost']);
