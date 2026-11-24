@@ -34,16 +34,16 @@ class EquationController
         $discriminant = $this->discriminant($a, $b, $c);
         if ($discriminant < 0)
         {
-            $answer = 'Дискриминант меньше 0, корней нет <br>';
+            $answer = 'Дискриминант меньше 0, корней нет';
             return $answer;
         } elseif ($discriminant == 0)
         {
             $x = -$b / 2 * $a;
-            return $x ."<br>";
+            return 'X= '.$x;
         } else {
             $x1 = -$b + sqrt($discriminant) / 2 * $a;
             $x2 = -$b - sqrt($discriminant) / 2 * $a;
-            return 'x1= '.$x1 . ' x2= '. $x2 . "<br>";
+            return 'x1= '.$x1 . ' x2= '. $x2;
         }
 
     }
@@ -56,7 +56,7 @@ class EquationController
         $discriminant = $this->discriminant($a, $b, $c);
         $answer = $this->equationCalculation($a, $b, $c);
         echo 'Дискриминант = ' . $discriminant . '<br>';
-        echo $answer;
+        echo $answer .'<br>';
         echo "Данное решение получено с данных a = $a, b = $b, c = $c";
         $base = Equation::createDecision($a, $b, $c, $discriminant, $answer);
         $base->save();
