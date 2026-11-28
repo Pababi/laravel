@@ -8,13 +8,14 @@ class Discriminant
 {
     public function __invoke(int $a, int $b, int $c): ResultDto
     {
-        $discriminantsss416541568418541 = $this->discriminant($a, $b, $c);
-        $answer = $this->equationCalculation($a, $b, $c);
-        $base = Equation::createDecision($a, $b, $c, $discriminantsss416541568418541, $answer);
+        $discriminant = $this->discriminant($a, $b, $c);
+        $answer = $this->equationCalculation($a, $b, $discriminant);
+
+        $base = Equation::createDecision($a, $b, $c, $discriminant, $answer);
         $base->save();
 
         return new ResultDto(
-            $discriminantsss416541568418541,
+            $discriminant,
             $a,
             $b,
             $c,
@@ -26,9 +27,9 @@ class Discriminant
         $discriminant = $b * $b - 4 * $a * $c;
         return $discriminant;
     }
-    private function equationCalculation(int $a, int $b, int $c)
+    private function equationCalculation(int $a, int $b, int $discriminant)
     {
-        $discriminant = $this->discriminant($a, $b, $c);
+
         if ($discriminant < 0)
         {
             $answer = 'Дискриминант меньше 0, корней нет';
