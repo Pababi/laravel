@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\equation\UseCase;
+namespace App\UseCase\Discriminant;
 
 use App\Models\Equation;
 
-class Discriminant
+class Handle
 {
     public function __invoke(int $a, int $b, int $c): ResultDto
     {

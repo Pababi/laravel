@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\equation\UseCase;
+namespace App\UseCase\Discriminant;
 
 final readonly class ResultDto
 {
