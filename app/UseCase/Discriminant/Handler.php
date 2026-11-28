@@ -4,7 +4,7 @@ namespace App\UseCase\Discriminant;
 
 use App\Models\Equation;
 
-class Handle
+final readonly class Handler
 {
     public function __invoke(int $a, int $b, int $c): ResultDto
     {

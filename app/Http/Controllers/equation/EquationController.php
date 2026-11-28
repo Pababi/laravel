@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\equation;
 
-use App\UseCase\Discriminant\Handle;
+use App\UseCase\Discriminant\Handler;
 
 class EquationController
 {
@@ -31,7 +31,7 @@ class EquationController
         $b = $request['b'];
         $c = $request['c'];
 
-        $useCase = new Handle();
+        $useCase = new Handler();
         $discriminant = $useCase($a, $b, $c);
         echo 'Дискриминант = ' . $discriminant->discriminant . '<br>';
         echo $discriminant->x .'<br>';
